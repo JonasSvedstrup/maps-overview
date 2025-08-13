@@ -15,7 +15,7 @@ const setActiveMap = (mapShort: string) => {
     <img
       class="compare-img"
       @click="setActiveMap(formatMapShort(map.name))"
-      v-bind:src="`maps-overview/src/assets/maps/${formatMapShort(map.name)}/${formatMapShort(map.name)}-${activeView}.png`"
+      v-bind:src="`/maps-overview/src/assets/maps/${formatMapShort(map.name)}/${formatMapShort(map.name)}-${activeView}.png`"
     />
 
     <!--
