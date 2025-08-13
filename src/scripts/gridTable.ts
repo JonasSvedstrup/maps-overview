@@ -1,12 +1,20 @@
 import type { ICellRendererParams } from "ag-grid-community";
-import type { AuthorData, ColDefs, MapsData, MapsRowData, PlaylistRowData, PlaylistsData } from "./types";
+import type {
+  AuthorData,
+  ColDefs,
+  MapsData,
+  MapsRowData,
+  PlaylistRowData,
+  PlaylistsData,
+} from "./types";
 import { formatMapLink, formatNumer, linkField } from "./util";
 
 export const getGridTableMapsOverviewColumns = (): ColDefs[] => [
   {
     field: "name",
     width: 150,
-    cellRenderer: (params: ICellRendererParams) => linkField(params.data.link, params.value),
+    cellRenderer: (params: ICellRendererParams) =>
+      linkField(params.data.link, params.value),
   },
   { field: "dlc" },
   { field: "buildableArea", width: 130 },
@@ -20,10 +28,12 @@ export const getGridTableMapsOverviewColumns = (): ColDefs[] => [
   { field: "link", hide: true },
 ];
 
-export const getGridTableMapsOverviewRows = (data: MapsData[]): MapsRowData[] => {
+export const getGridTableMapsOverviewRows = (
+  data: MapsData[],
+): MapsRowData[] => {
   const rowData: MapsRowData[] = [];
 
-  data.forEach((d) => {
+  data.forEach(d => {
     const { milestones } = d;
 
     const littleHamlet = formatNumer(milestones[0]);
@@ -51,15 +61,18 @@ export const getGridTablePlaylistsColumns = (): ColDefs[] => {
   return [
     {
       field: "name",
-      cellRenderer: (params: ICellRendererParams) => linkField(params.data.link, params.value),
+      cellRenderer: (params: ICellRendererParams) =>
+        linkField(params.data.link, params.value),
     },
     {
       field: "author",
-      cellRenderer: (params: ICellRendererParams) => linkField(params.data.linkProfile, params.value),
+      cellRenderer: (params: ICellRendererParams) =>
+        linkField(params.data.linkProfile, params.value),
     },
     {
       field: "playlistTitle",
-      cellRenderer: (params: ICellRendererParams) => linkField(params.data.linkPlaylist, params.value),
+      cellRenderer: (params: ICellRendererParams) =>
+        linkField(params.data.linkPlaylist, params.value),
       width: 500,
     },
     { field: "videos" },
@@ -73,20 +86,24 @@ export const getGridTablePlaylistsColumns = (): ColDefs[] => {
 export const getGridTablePlaylistsRows = (
   playlistsData: PlaylistsData[],
   authorData: AuthorData[],
-  selectedMap?: string
+  selectedMap?: string,
 ): PlaylistRowData[] => {
   const rowData: PlaylistRowData[] = [];
 
   if (selectedMap) {
-    playlistsData = playlistsData.filter((playlist) => playlist.name === selectedMap);
+    playlistsData = playlistsData.filter(
+      playlist => playlist.name === selectedMap,
+    );
   }
 
-  playlistsData.forEach((playlistData) => {
+  playlistsData.forEach(playlistData => {
     const { name, playlists } = playlistData;
 
-    playlists.forEach((playlist) => {
+    playlists.forEach(playlist => {
       const { author, title, videos, playlistUrl, year } = playlist;
-      const filteredAuthor = authorData.filter((authorData) => authorData.name === author);
+      const filteredAuthor = authorData.filter(
+        authorData => authorData.name === author,
+      );
       const authorProfileLink = filteredAuthor[0].profileLink;
 
       rowData.push({

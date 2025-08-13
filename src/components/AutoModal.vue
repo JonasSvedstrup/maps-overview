@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useModalStore } from '@/stores/modal';
+import { useModalStore } from "@/stores/modal";
 const modalStore = useModalStore();
 
 const checkAndHideModal = (el: MouseEvent) => {
   // @ts-expect-error no need for a type of this.
-  if (el && el.target && ['modal-mask'].includes(el.target.className)) {
+  if (el && el.target && ["modal-mask"].includes(el.target.className)) {
     hideModal();
   }
 };
@@ -12,19 +12,25 @@ const checkAndHideModal = (el: MouseEvent) => {
 const hideModal = () => {
   document.body.classList.remove("modal-open");
   modalStore.hideModal();
-}
+};
 </script>
 <template>
-  <div v-if="modalStore.modalOpen" class="modal-mask" @click="checkAndHideModal">
+  <div
+    v-if="modalStore.modalOpen"
+    class="modal-mask"
+    @click="checkAndHideModal"
+  >
     <div class="modal-container">
       <div class="modal-header">
         <button class="modal-close-button" @click="hideModal">X</button>
         {{ modalStore.mapShort }}
       </div>
       <div class="modal-body">
-        <img v-if="modalStore.mapShort"
+        <img
+          v-if="modalStore.mapShort"
           :src="`/src/assets/maps/${modalStore.mapShort}/${modalStore.mapShort}-${modalStore.mapView}.png`"
-          class="modal-image-img" />
+          class="modal-image-img"
+        />
       </div>
       <div class="modal-footer">
         <slot name="footer">

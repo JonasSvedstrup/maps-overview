@@ -22,5 +22,13 @@ export const useModalStore = defineStore("modal", () => {
     mapView.value = str;
   }
 
-  return { modalOpen, showModal, hideModal, mapShort, setMapShort, mapView, setMapView };
+  return {
+    modalOpen,
+    showModal,
+    hideModal,
+    mapShort,
+    setMapShort,
+    mapView,
+    setMapView,
+  };
 });

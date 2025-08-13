@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import TabsList from '@/components/TabsList.vue';
-import TabsViews from '@/components/TabsViews.vue';
-import { init, mapViews } from '@/scripts/util';
-import { useModalStore } from '@/stores/modal';
-import { ref } from 'vue';
-import rawMapsData from '../data/maps.json';
+import TabsList from "@/components/TabsList.vue";
+import TabsViews from "@/components/TabsViews.vue";
+import { init, mapViews } from "@/scripts/util";
+import { useModalStore } from "@/stores/modal";
+import { ref } from "vue";
+import rawMapsData from "../data/maps.json";
 
-const activeView = ref('top');
+const activeView = ref("top");
 
 const modalStore = useModalStore();
 
@@ -23,7 +23,6 @@ const handleShowImage = (mapShort: string) => {
 
 const mapsData = rawMapsData.filter(map => map.hasImages);
 init();
-
 </script>
 
 <template>
@@ -31,17 +30,23 @@ init();
     <section>
       <h1>Maps Compare</h1>
       <h2>Cities Skylines</h2>
-      <p>
-        Here you can compare maps by screenshots taken in the game.
-      </p>
+      <p>Here you can compare maps by screenshots taken in the game.</p>
     </section>
     <section>
       <div class="tablist">
-        <TabsList :dataList="mapViews" :activeView="activeView" @change-view="handleChangeView" />
+        <TabsList
+          :dataList="mapViews"
+          :activeView="activeView"
+          @change-view="handleChangeView"
+        />
       </div>
     </section>
     <section class="full-width">
-      <TabsViews :dataList="mapsData" :activeView="activeView" @handle-show-image="handleShowImage" />
+      <TabsViews
+        :dataList="mapsData"
+        :activeView="activeView"
+        @handle-show-image="handleShowImage"
+      />
     </section>
   </main>
 </template>

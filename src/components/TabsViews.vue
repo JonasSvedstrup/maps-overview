@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import type { MapsData } from '@/scripts/types';
-import { formatMapShort } from '@/scripts/util';
+import type { MapsData } from "@/scripts/types";
+import { formatMapShort } from "@/scripts/util";
 defineProps<{
   dataList: MapsData[];
   activeView: string;
 }>();
-const emitShowImage = defineEmits(['handleShowImage'])
+const emitShowImage = defineEmits(["handleShowImage"]);
 const setActiveMap = (mapShort: string) => {
-  emitShowImage('handleShowImage', mapShort);
-
-}
+  emitShowImage("handleShowImage", mapShort);
+};
 </script>
 <template>
   <div v-for="map in dataList" v-bind:key="map.name" class="compare-wrapper">
-    <img class="compare-img" @click="setActiveMap(formatMapShort(map.name))"
-      v-bind:src="`src/assets/maps/${formatMapShort(map.name)}/${formatMapShort(map.name)}-${activeView}.png`" />
-    <h2><a v-bind:href="`map?name=${formatMapShort(map.name)}`">{{ map.name }}</a></h2>
+    <img
+      class="compare-img"
+      @click="setActiveMap(formatMapShort(map.name))"
+      v-bind:src="`src/assets/maps/${formatMapShort(map.name)}/${formatMapShort(map.name)}-${activeView}.png`"
+    />
+    <h2>
+      <a v-bind:href="`map?name=${formatMapShort(map.name)}`">{{ map.name }}</a>
+    </h2>
   </div>
 </template>

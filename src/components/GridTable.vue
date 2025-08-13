@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import type { ColDefs, MapsRowData, PlaylistRowData } from '@/scripts/types';
-import { AllCommunityModule, ModuleRegistry, type DomLayoutType } from 'ag-grid-community';
+import type { ColDefs, MapsRowData, PlaylistRowData } from "@/scripts/types";
+import {
+  AllCommunityModule,
+  ModuleRegistry,
+  type DomLayoutType,
+} from "ag-grid-community";
 ModuleRegistry.registerModules([AllCommunityModule]);
 defineProps<{
   columns: ColDefs[];
@@ -11,12 +15,17 @@ defineProps<{
 </script>
 
 <template>
+  <p>Hold 'Shift' to sort multiple columns.</p>
   <p>
-    Hold 'Shift' to sort multiple columns.
-  </p>
-  <p>
-    <ag-grid-vue :rowData="rows" :columnDefs="columns" :domLayout="domLayout" :pagination=true :paginationPageSize="10"
-      :paginationPageSizeSelector="[10, 50, 100]" :style="height ? `height: ${height}px` : ''" />
+    <ag-grid-vue
+      :rowData="rows"
+      :columnDefs="columns"
+      :domLayout="domLayout"
+      :pagination="true"
+      :paginationPageSize="10"
+      :paginationPageSizeSelector="[10, 50, 100]"
+      :style="height ? `height: ${height}px` : ''"
+    />
   </p>
 </template>
 
@@ -26,8 +35,7 @@ import { AgGridVue } from "ag-grid-vue3";
 export default {
   name: "GridTable",
   components: {
-    AgGridVue
+    AgGridVue,
   },
 };
-
 </script>

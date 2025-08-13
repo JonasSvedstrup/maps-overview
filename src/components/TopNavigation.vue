@@ -6,8 +6,13 @@ import { RouterLink } from "vue-router";
 <template>
   <section>
     <nav>
-      <RouterLink v-for="nav in navs" v-bind:key="nav.name" :to="nav.path" :tabindex="1" class="transition">{{
-        nav.name }}
+      <RouterLink
+        v-for="nav in navs"
+        v-bind:key="nav.name"
+        :to="nav.path"
+        :tabindex="1"
+        class="transition"
+        >{{ nav.name }}
       </RouterLink>
     </nav>
   </section>
