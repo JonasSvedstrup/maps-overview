@@ -1,35 +1,258 @@
 @import "./base.css";
 
-#app {
-  max-width: 1280px;
+h1,
+h2,
+h3 {
+  margin-block-start: 2rem;
+  margin-block-end: 1rem;
+  font-weight: 400;
+}
+
+h1 {
+  margin-block-end: 0;
+  font-size: 48px;
+}
+
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 38px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+p {
+  line-height: 26px;
+  margin-block-end: 1rem;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+main {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+section {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
 }
 
-a,
-.green {
+.full-width {
+  max-width: 1200px;
+}
+
+nav {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem 0;
+}
+
+.transition {
+  transition: color 0.25s ease-in-out;
+}
+
+nav a {
+  display: inline-block;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  padding: 6px 8px;
+  color: rgb(216, 220, 222);
+  border-radius: 4px;
+  padding: 6px 8px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+nav a:hover {
+  background-color: rgba(102, 160, 205, 0.08);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+nav a:first-of-type {
+  border: 0;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+nav a.router-link-exact-active {
+  background-color: rgba(102, 160, 205, 0.16);
+}
+
+a {
+  color: var(--color-text);
+}
+
+.ag-cell a {
+  color: var(--color-cell-link);
+}
+
+.ag-center-cols-viewport {
+  min-height: 40px !important;
+}
+
+header {
+  background-color: var(--c-blue-dark-b);
+}
+
+footer {
+  clear: both;
+  background-color: black;
+  padding: 1rem;
+}
+
+.grid-table-single {
+  min-height: 200px;
+}
+
+.compare-wrapper {
+  width: 200px;
+  margin: 10px;
+  float: left;
+  text-align: center;
+}
+
+.compare-wrapper a {
+  text-decoration: none;
+}
+
+.compare-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.compare-img {
+  border: 1px solid #333;
+  object-fit: contain;
+  width: 100%;
+  height: 200px;
+}
+
+.compare-img:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.compare-wrapper h2 {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.map-view-button {
+  background-color: var(--color-button-background);
+  color: var(--color-link);
+  margin-right: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 0;
+}
+
+.map-view-button.active {
+  background-color: var(--color-button-active);
+  color: var(--color-text);
+}
+
+.map-view-button:hover {
+  background-color: var(--color-button-hover);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.map-view-img {
+  display: none;
+}
+
+.map-img {
+  width: 100%;
+  border: 10px solid rgb(38, 148, 214);
+}
+
+.tablist {
+  border-bottom: 1px solid rgb(57, 67, 75);
+  margin-bottom: 20px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.tab {
+  text-align: left;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.tab:hover {
+  color: rgb(38, 148, 214);
+}
+
+.tab.active {
+  border-bottom: 3px solid rgb(38, 148, 214);
+  color: rgb(38, 148, 214);
+}
+
+*:focus-visible {
+  outline: 1px solid white;
+  border-radius: 4px;
+  color: rgb(38, 148, 214);
+}
+
+button {
+  border: 1px solid rgb(38, 148, 214);
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0px 1.07143em;
+  margin-left: 4px;
+  margin-right: 4px;
+  height: 40px;
+  line-height: 38px;
+  font-size: 14px;
+  color: var(--color-link);
+  /* background-color: transparent; */
+  background-color: #ffffff;
+  color: #666666;
+}
+
+button:hover {
+  border-color: rgb(102, 160, 205);
+  background-color: rgba(38, 148, 214, 0.08);
+  background-color: #fefefe;
+  color: #333333;
+}
+
+button:active {
+  border-color: rgb(147, 188, 220);
+  background-color: rgba(38, 148, 214, 0.16);
+  color: rgb(147, 188, 220);
+}
+
+.select {
+  cursor: pointer;
+  border-color: transparent;
+  /* background-color: transparent; */
+  background-color: #ffffff;
+  appearance: none;
+  /* border: 1px solid rgb(38, 148, 214); */
+  border-radius: 4px;
+  padding: 0.714286em 10px 0.857143em;
+  color: #333333;
+}
+
+#main-map {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.modal-image-img {
+  width: 100%;
+}
+
+.modal-header {
+  min-height: 50px;
+}
+
+.modal-close-button {
+  float: right;
 }

@@ -10,15 +10,18 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "build-only": "vite build",
+    "build-only": "vite build --base=/maps-overview/",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "ag-grid-vue3": "^34.1.1",
+    "gh-pages": "^6.3.0",
     "pinia": "^3.0.3",
     "vue": "^3.5.18",
+    "vue-final-modal": "^4.5.5",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
