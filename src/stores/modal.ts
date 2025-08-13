@@ -1,10 +1,10 @@
-import { defineStore } from "pinia";
-import { ref } from "vue";
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
-export const useModalStore = defineStore("modal", () => {
+export const useModalStore = defineStore('modal', () => {
   const modalOpen = ref(false);
-  const mapShort = ref("");
-  const mapView = ref("");
+  const mapShort = ref('');
+  const mapView = ref('');
 
   function showModal() {
     modalOpen.value = true;

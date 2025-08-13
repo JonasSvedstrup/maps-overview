@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import GridTable from "@/components/GridTable.vue";
+import GridTable from '@/components/GridTable.vue';
 import {
   getGridTablePlaylistsColumns,
   getGridTablePlaylistsRows,
-} from "@/scripts/gridTable";
-import { init } from "@/scripts/util";
-import rawAuthorsData from "../data/authors.json";
-import rawPlaylistsData from "../data/lets-play.json";
+} from '@/scripts/gridTable';
+import { init } from '@/scripts/util';
+import rawAuthorsData from '../data/authors.json';
+import rawPlaylistsData from '../data/lets-play.json';
 init();
 </script>
 <template>

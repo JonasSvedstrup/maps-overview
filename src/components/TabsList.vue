@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { formatMapName } from "@/scripts/util";
+import { formatMapName } from '@/scripts/util';
 defineProps<{
   dataList: string[];
   activeView: string;
 }>();
-const emit = defineEmits(["change-view"]);
+const emit = defineEmits(['change-view']);
 </script>
 <template>
   <div

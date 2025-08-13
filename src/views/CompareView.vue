@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import TabsList from "@/components/TabsList.vue";
-import TabsViews from "@/components/TabsViews.vue";
-import { init, mapViews } from "@/scripts/util";
-import { useModalStore } from "@/stores/modal";
-import { ref } from "vue";
-import rawMapsData from "../data/maps.json";
+import TabsList from '@/components/TabsList.vue';
+import TabsViews from '@/components/TabsViews.vue';
+import { init, mapViews } from '@/scripts/util';
+import { useModalStore } from '@/stores/modal';
+import { ref } from 'vue';
+import rawMapsData from '../data/maps.json';
 
-const activeView = ref("top");
+const activeView = ref('top');
 
 const modalStore = useModalStore();
 
@@ -15,7 +15,7 @@ function handleChangeView(newView: string) {
 }
 
 const handleShowImage = (mapShort: string) => {
-  document.body.classList.add("modal-open");
+  document.body.classList.add('modal-open');
   modalStore.setMapShort(mapShort);
   modalStore.setMapView(activeView.value);
   modalStore.showModal();

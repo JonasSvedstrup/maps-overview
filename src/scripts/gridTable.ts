@@ -1,4 +1,4 @@
-import type { ICellRendererParams } from "ag-grid-community";
+import type { ICellRendererParams } from 'ag-grid-community';
 import type {
   AuthorData,
   ColDefs,
@@ -6,26 +6,26 @@ import type {
   MapsRowData,
   PlaylistRowData,
   PlaylistsData,
-} from "./types";
-import { formatMapLink, formatNumer, linkField } from "./util";
+} from './types';
+import { formatMapLink, formatNumer, linkField } from './util';
 
 export const getGridTableMapsOverviewColumns = (): ColDefs[] => [
   {
-    field: "name",
+    field: 'name',
     width: 150,
     cellRenderer: (params: ICellRendererParams) =>
       linkField(params.data.link, params.value),
   },
-  { field: "dlc" },
-  { field: "buildableArea", width: 130 },
-  { field: "theme", width: 110 },
-  { field: "littleHamlet", width: 120 },
-  { field: "megalopolis", width: 120 },
-  { field: "highway", width: 90 },
-  { field: "railway", width: 90 },
-  { field: "ship", width: 90 },
-  { field: "air", width: 90 },
-  { field: "link", hide: true },
+  { field: 'dlc' },
+  { field: 'buildableArea', width: 130 },
+  { field: 'theme', width: 110 },
+  { field: 'littleHamlet', width: 120 },
+  { field: 'megalopolis', width: 120 },
+  { field: 'highway', width: 90 },
+  { field: 'railway', width: 90 },
+  { field: 'ship', width: 90 },
+  { field: 'air', width: 90 },
+  { field: 'link', hide: true },
 ];
 
 export const getGridTableMapsOverviewRows = (
@@ -60,26 +60,26 @@ export const getGridTableMapsOverviewRows = (
 export const getGridTablePlaylistsColumns = (): ColDefs[] => {
   return [
     {
-      field: "name",
+      field: 'name',
       cellRenderer: (params: ICellRendererParams) =>
         linkField(params.data.link, params.value),
     },
     {
-      field: "author",
+      field: 'author',
       cellRenderer: (params: ICellRendererParams) =>
         linkField(params.data.linkProfile, params.value),
     },
     {
-      field: "playlistTitle",
+      field: 'playlistTitle',
       cellRenderer: (params: ICellRendererParams) =>
         linkField(params.data.linkPlaylist, params.value),
       width: 500,
     },
-    { field: "videos" },
-    { field: "year" },
-    { field: "link", hide: true },
-    { field: "linkProfile", hide: true },
-    { field: "linkPlaylist", hide: true },
+    { field: 'videos' },
+    { field: 'year' },
+    { field: 'link', hide: true },
+    { field: 'linkProfile', hide: true },
+    { field: 'linkPlaylist', hide: true },
   ];
 };
 

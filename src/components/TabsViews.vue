@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { MapsData } from "@/scripts/types";
-import { formatMapShort } from "@/scripts/util";
+import type { MapsData } from '@/scripts/types';
+import { formatMapShort } from '@/scripts/util';
 defineProps<{
   dataList: MapsData[];
   activeView: string;
 }>();
-const emitShowImage = defineEmits(["handleShowImage"]);
+const emitShowImage = defineEmits(['handleShowImage']);
 const setActiveMap = (mapShort: string) => {
-  emitShowImage("handleShowImage", mapShort);
+  emitShowImage('handleShowImage', mapShort);
 };
 </script>
 <template>

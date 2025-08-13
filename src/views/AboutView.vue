@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { init } from "@/scripts/util";
+import { init } from '@/scripts/util';
 init();
 </script>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { formatMapShort, pickSelectedMap } from "@/scripts/util";
-import rawMapsData from "../data/maps.json";
+import { formatMapShort, pickSelectedMap } from '@/scripts/util';
+import rawMapsData from '../data/maps.json';
 
 const onChange = (event: Event) => {
   const target = event.target as HTMLButtonElement;

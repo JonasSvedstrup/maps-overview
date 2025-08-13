@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { navs } from "@/scripts/util";
-import { RouterLink } from "vue-router";
+import { navs } from '@/scripts/util';
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>

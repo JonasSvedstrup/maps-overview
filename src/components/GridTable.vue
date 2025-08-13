@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { ColDefs, MapsRowData, PlaylistRowData } from "@/scripts/types";
+import type { ColDefs, MapsRowData, PlaylistRowData } from '@/scripts/types';
 import {
   AllCommunityModule,
   ModuleRegistry,
   type DomLayoutType,
-} from "ag-grid-community";
+} from 'ag-grid-community';
 ModuleRegistry.registerModules([AllCommunityModule]);
 defineProps<{
   columns: ColDefs[];
@@ -30,10 +30,10 @@ defineProps<{
 </template>
 
 <script lang="ts">
-import { AgGridVue } from "ag-grid-vue3";
+import { AgGridVue } from 'ag-grid-vue3';
 
 export default {
-  name: "GridTable",
+  name: 'GridTable',
   components: {
     AgGridVue,
   },

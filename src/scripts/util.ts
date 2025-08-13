@@ -1,38 +1,38 @@
-import type { MapsData } from "./types";
+import type { MapsData } from './types';
 
 export const formatMapName = (str: string) =>
   str
-    .replace("-", " ")
+    .replace('-', ' ')
     .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
 export const formatMapShort = (str: string) =>
-  str.replace(" ", "-").toLowerCase();
+  str.replace(' ', '-').toLowerCase();
 export const formatMapLink = (str: string) =>
-  `map?name=${str.toLowerCase().replace(" ", "-")}`;
+  `map?name=${str.toLowerCase().replace(' ', '-')}`;
 export const formatNumer = (number: number) =>
-  number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "";
+  number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') : '';
 export const linkField = (link: string, value: string) =>
   `<a href="${link}">${value}</a>`;
 export const getQueryString = (n: string) => {
-  const half = location.search.split(n + "=")[1];
-  return half !== undefined ? decodeURIComponent(half.split("&")[0]) : null;
+  const half = location.search.split(n + '=')[1];
+  return half !== undefined ? decodeURIComponent(half.split('&')[0]) : null;
 };
-export const getSelectedMap = () => getQueryString("name");
+export const getSelectedMap = () => getQueryString('name');
 
 export const navs = [
-  { name: "Overview", path: "/" },
-  { name: "Map", path: "/map?name=roslyn-peninsula" },
-  { name: "Playthroughs", path: "/playthroughs" },
-  { name: "Compare", path: "/compare" },
+  { name: 'Overview', path: '/' },
+  { name: 'Map', path: '/map?name=roslyn-peninsula' },
+  { name: 'Playthroughs', path: '/playthroughs' },
+  { name: 'Compare', path: '/compare' },
 ];
 export const mapViews: string[] = [
-  "top",
-  "tiles",
-  "start",
-  "resources",
-  "height",
-  "wind",
-  "fish",
-  "transport",
+  'top',
+  'tiles',
+  'start',
+  'resources',
+  'height',
+  'wind',
+  'fish',
+  'transport',
 ];
 export const Connections = {
   Highway: `Highway`,
@@ -52,19 +52,19 @@ export const pickSelectedMap = (map: string) => {
 };
 
 export const init = () => {
-  let title = "";
+  let title = '';
   switch (location.pathname) {
-    case "/":
-      title = "Map Overview - Cities Skylines";
+    case '/':
+      title = 'Map Overview - Cities Skylines';
       break;
-    case "/map":
-      title = "Map Details - Cities Skylines";
+    case '/map':
+      title = 'Map Details - Cities Skylines';
       break;
-    case "/playthroughs":
+    case '/playthroughs':
       title = "Let's Play - Playlists - Cities Skylines";
       break;
-    case "/compare":
-      title = "Maps Compare - Cities Skylines";
+    case '/compare':
+      title = 'Maps Compare - Cities Skylines';
       break;
   }
   document.title = title;

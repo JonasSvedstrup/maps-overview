@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import GridTable from "@/components/GridTable.vue";
-import MapDetails from "@/components/MapDetails.vue";
-import MapSelect from "@/components/MapSelect.vue";
+import GridTable from '@/components/GridTable.vue';
+import MapDetails from '@/components/MapDetails.vue';
+import MapSelect from '@/components/MapSelect.vue';
 import {
   getGridTablePlaylistsColumns,
   getGridTablePlaylistsRows,
-} from "@/scripts/gridTable";
+} from '@/scripts/gridTable';
 import {
   formatMapName,
   getSelectedMap,
   init,
   mapViews,
   pickRandomMap,
-} from "@/scripts/util";
-import { useModalStore } from "@/stores/modal";
-import rawAuthorsData from "../data/authors.json";
-import rawPlaylistsData from "../data/lets-play.json";
-import rawMapsData from "../data/maps.json";
+} from '@/scripts/util';
+import { useModalStore } from '@/stores/modal';
+import rawAuthorsData from '../data/authors.json';
+import rawPlaylistsData from '../data/lets-play.json';
+import rawMapsData from '../data/maps.json';
 
 const modalStore = useModalStore();
 
-const fallbackMap: string = "roslyn-peninsula";
+const fallbackMap: string = 'roslyn-peninsula';
 const selectedMap: string = getSelectedMap() ?? fallbackMap;
 const formattedMapName: string = formatMapName(selectedMap);
 
 const handleShowImage = (mapShort: string, mapView: string) => {
-  document.body.classList.add("modal-open");
+  document.body.classList.add('modal-open');
   modalStore.setMapShort(mapShort);
   modalStore.setMapView(mapView);
   modalStore.showModal();
@@ -39,8 +39,8 @@ const changeView = (view: string) => {
     const mapViewEl = document.querySelector(
       `#map-view-${mapView}`,
     ) as HTMLDivElement;
-    mapViewButton.classList.remove("active");
-    mapViewEl.style.display = "none";
+    mapViewButton.classList.remove('active');
+    mapViewEl.style.display = 'none';
   });
   const mapViewButtonClicked = document.querySelector(
     `#map-view-button-${view}`,
@@ -48,8 +48,8 @@ const changeView = (view: string) => {
   const mapViewSelected = document.querySelector(
     `#map-view-${view}`,
   ) as HTMLDivElement;
-  mapViewButtonClicked.classList.add("active");
-  mapViewSelected.style.display = "block";
+  mapViewButtonClicked.classList.add('active');
+  mapViewSelected.style.display = 'block';
 };
 
 init();

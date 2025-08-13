@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useModalStore } from "@/stores/modal";
+import { useModalStore } from '@/stores/modal';
 const modalStore = useModalStore();
 
 const checkAndHideModal = (el: MouseEvent) => {
   // @ts-expect-error no need for a type of this.
-  if (el && el.target && ["modal-mask"].includes(el.target.className)) {
+  if (el && el.target && ['modal-mask'].includes(el.target.className)) {
     hideModal();
   }
 };
 
 const hideModal = () => {
-  document.body.classList.remove("modal-open");
+  document.body.classList.remove('modal-open');
   modalStore.hideModal();
 };
 </script>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import GridTable from "@/components/GridTable.vue";
+import GridTable from '@/components/GridTable.vue';
 import {
   getGridTableMapsOverviewColumns,
   getGridTableMapsOverviewRows,
-} from "@/scripts/gridTable";
-import { init } from "@/scripts/util";
-import rawMapsData from "../data/maps.json";
+} from '@/scripts/gridTable';
+import { init } from '@/scripts/util';
+import rawMapsData from '../data/maps.json';
 init();
 </script>
 
