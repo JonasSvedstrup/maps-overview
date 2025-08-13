@@ -7,6 +7,18 @@ init();
   <main id="main-about">
     <section>
       <h1>About</h1>
+      <img
+        class="map-img"
+        src="src/assets/maps/foggy-hills/foggy-hills-top.png"
+      />
+      <img
+        class="map-img"
+        src="maps/overview/src/assets/maps/foggy-hills/foggy-hills-top.png"
+      />
+      <img
+        class="map-img"
+        src="/maps/overview/src/assets/maps/foggy-hills/foggy-hills-top.png"
+      />
     </section>
   </main>
 </template>

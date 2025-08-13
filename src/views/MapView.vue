@@ -59,7 +59,7 @@ init();
   <main
     id="main-map"
     :style="`background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), #141e32),
-    url('/maps-overview/src/assets/maps/${selectedMap}/${selectedMap}-top.png')`"
+    url('src/assets/maps/${selectedMap}/${selectedMap}-top.png')`"
   >
     <section>
       <h1>Map Details</h1>
