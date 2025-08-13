@@ -28,7 +28,7 @@ const hideModal = () => {
       <div class="modal-body">
         <img
           v-if="modalStore.mapShort"
-          :src="`/src/assets/maps/${modalStore.mapShort}/${modalStore.mapShort}-${modalStore.mapView}.png`"
+          :src="`/maps-overview/src/assets/maps/${modalStore.mapShort}/${modalStore.mapShort}-${modalStore.mapView}.png`"
           class="modal-image-img"
         />
       </div>

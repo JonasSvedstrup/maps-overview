@@ -15,8 +15,19 @@ const setActiveMap = (mapShort: string) => {
     <img
       class="compare-img"
       @click="setActiveMap(formatMapShort(map.name))"
-      v-bind:src="`src/assets/maps/${formatMapShort(map.name)}/${formatMapShort(map.name)}-${activeView}.png`"
+      v-bind:src="`maps-overview/src/assets/maps/${formatMapShort(map.name)}/${formatMapShort(map.name)}-${activeView}.png`"
     />
+
+    <!--
+
+https://jonassvedstrup.github.io/cs-maps-overview/maps/foggy-hills/foggy-hills-top.png
+cs-maps-overview/maps/foggy-hills/foggy-hills-top.png
+
+
+maps-overview/src/assets/maps/foggy-hills/foggy-hills-top.png
+
+-->
+
     <h2>
       <a v-bind:href="`map?name=${formatMapShort(map.name)}`">{{ map.name }}</a>
     </h2>
