@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GridTable from '@/components/GridTable.vue';
+import GridTable2 from '@/components/GridTable2.vue';
 import MapDetails from '@/components/MapDetails.vue';
 import MapSelect from '@/components/MapSelect.vue';
 import {
@@ -74,7 +74,7 @@ init();
       <p>A collection of lets play playlists on this map</p>
     </section>
     <section class="full-width grid-table-single">
-      <GridTable
+      <GridTable2
         :columns="getGridTablePlaylistsColumns()"
         domLayout="autoHeight"
         :rows="

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GridTable from '@/components/GridTable.vue';
+import GridTable2 from '@/components/GridTable2.vue';
 import {
   getGridTablePlaylistsColumns,
   getGridTablePlaylistsRows,
@@ -28,7 +28,7 @@ init();
       </p>
     </section>
     <section class="full-width">
-      <GridTable
+      <GridTable2
         :columns="getGridTablePlaylistsColumns()"
         :height="514"
         :rows="getGridTablePlaylistsRows(rawPlaylistsData, rawAuthorsData)"

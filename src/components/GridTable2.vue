@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColDefs, MapsRowData } from '@/scripts/types';
+import type { ColDefs, PlaylistRowData } from '@/scripts/types';
 import {
   AllCommunityModule,
   ModuleRegistry,
@@ -8,7 +8,7 @@ import {
 ModuleRegistry.registerModules([AllCommunityModule]);
 defineProps<{
   columns: ColDefs[];
-  rows: MapsRowData[];
+  rows: PlaylistRowData[];
   domLayout?: DomLayoutType | undefined;
   height?: number | undefined;
 }>();
