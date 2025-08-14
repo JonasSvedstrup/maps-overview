@@ -30,7 +30,7 @@ import rawMapsData from '../data/maps.json';
 
 <script lang="ts">
 const fallbackMap: string = 'roslyn-peninsula';
-const selectedMap: string = getSelectedMap() ?? fallbackMap;
+const selectedMap: string = getSelectedMap(fallbackMap);
 const formattedMapName: string = formatMapName(selectedMap);
 const mapData: MapsData = rawMapsData.filter(
   map => map.name == formatMapName(selectedMap),

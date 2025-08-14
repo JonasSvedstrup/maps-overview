@@ -12,7 +12,15 @@ export const formatNumer = (number: number) =>
   number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') : '';
 export const linkField = (link: string, value: string) =>
   `<a href="${link}">${value}</a>`;
-export const getSelectedMap = () => location.pathname.split('/').slice(-1)[0];
+export const getSelectedMap = (fallbackMap: string) => {
+  let selectedMap = location.pathname.split('/').slice(-1)[0];
+
+  if (selectedMap.length === 0) {
+    selectedMap = fallbackMap;
+  }
+
+  return selectedMap;
+};
 
 export const navs = [
   { name: 'Overview', path: '/' },

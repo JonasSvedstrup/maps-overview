@@ -10,6 +10,11 @@ const router = createRouter({
       component: OverviewView,
     },
     {
+      path: '/map',
+      name: 'map',
+      component: () => import('../views/MapView.vue'),
+    },
+    {
       path: '/map/:name',
       name: 'map',
       component: () => import('../views/MapView.vue'),
