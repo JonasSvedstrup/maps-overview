@@ -1,0 +1,1 @@
+import{d as o,k as n,c as a,a as t,o as s}from"./index-H6L28LUO.js";const i={id:"main-about"},l=o({__name:"AboutView",setup(r){return n(),(u,e)=>(s(),a("main",i,e[0]||(e[0]=[t("section",null,[t("h1",null,"About")],-1)])))}});export{l as default};
