@@ -18,7 +18,7 @@ const setActiveMap = (mapShort: string) => {
       v-bind:src="`/maps-overview/mapfiles/${formatMapShort(map.name)}/${formatMapShort(map.name)}-${activeView}.png`"
     />
     <h2>
-      <a v-bind:href="`map?name=${formatMapShort(map.name)}`">{{ map.name }}</a>
+      <a v-bind:href="`map/${formatMapShort(map.name)}`">{{ map.name }}</a>
     </h2>
   </div>
 </template>

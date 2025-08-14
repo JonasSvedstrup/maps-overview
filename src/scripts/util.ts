@@ -7,20 +7,16 @@ export const formatMapName = (str: string) =>
 export const formatMapShort = (str: string) =>
   str.replace(' ', '-').toLowerCase();
 export const formatMapLink = (str: string) =>
-  `map?name=${str.toLowerCase().replace(' ', '-')}`;
+  `map/${str.toLowerCase().replace(' ', '-')}`;
 export const formatNumer = (number: number) =>
   number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') : '';
 export const linkField = (link: string, value: string) =>
   `<a href="${link}">${value}</a>`;
-export const getQueryString = (n: string) => {
-  const half = location.search.split(n + '=')[1];
-  return half !== undefined ? decodeURIComponent(half.split('&')[0]) : null;
-};
-export const getSelectedMap = () => getQueryString('name');
+export const getSelectedMap = () => location.pathname.split('/').slice(-1)[0];
 
 export const navs = [
   { name: 'Overview', path: '/' },
-  { name: 'Map', path: '/map?name=roslyn-peninsula' },
+  { name: 'Map', path: '/map/roslyn-peninsula' },
   { name: 'Playthroughs', path: '/playthroughs' },
   { name: 'Compare', path: '/compare' },
 ];
@@ -44,11 +40,11 @@ export const Connections = {
 export const pickRandomMap = (mapsData: MapsData[]) => {
   const mapsSplice = mapsData.filter(map => map.hasImages === true);
   const randomNumber = Math.floor(Math.random() * mapsSplice.length);
-  location.href = `map?name=${formatMapShort(mapsSplice[randomNumber].name)}`;
+  location.href = `/maps-overview/map/${formatMapShort(mapsSplice[randomNumber].name)}`;
 };
 
 export const pickSelectedMap = (map: string) => {
-  location.href = `map?name=${map}`;
+  location.href = `/maps-overview/map/${map}`;
 };
 
 export const init = () => {
