@@ -59,7 +59,7 @@ init();
   <main
     id="main-map"
     :style="`background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), #141e32),
-    url('src/assets/maps/${selectedMap}/${selectedMap}-top.png')`"
+    url('/maps-overview/mapfiles/${selectedMap}/${selectedMap}-top.png')`"
   >
     <section>
       <h1>Map Details</h1>
@@ -111,7 +111,7 @@ init();
       >
         <img
           class="map-img"
-          v-bind:src="`src/assets/maps/${selectedMap}/${selectedMap}-${mapView}.png`"
+          v-bind:src="`/maps-overview/mapfiles/${selectedMap}/${selectedMap}-${mapView}.png`"
         />
       </div>
     </section>
