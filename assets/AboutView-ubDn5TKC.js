@@ -1,1 +1,0 @@
-import{d as o,k as t,c as a,a as s,o as n}from"./index-CE0DIXWP.js";const i="/maps-overview/assets/foggy-hills-top-DsrehLRj.png",r={id:"main-about"},l=o({__name:"AboutView",setup(m){return t(),(p,e)=>(n(),a("main",r,e[0]||(e[0]=[s("section",null,[s("h1",null,"About"),s("img",{class:"map-img",src:i})],-1)])))}});export{l as default};
