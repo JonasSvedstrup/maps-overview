@@ -21,7 +21,7 @@ import rawMapsData from '../data/maps.json';
 const modalStore = useModalStore();
 
 const fallbackMap: string = 'roslyn-peninsula';
-const selectedMap: string = getSelectedMap() ?? fallbackMap;
+const selectedMap: string = getSelectedMap(fallbackMap);
 const formattedMapName: string = formatMapName(selectedMap);
 
 const handleShowImage = (mapShort: string, mapView: string) => {
